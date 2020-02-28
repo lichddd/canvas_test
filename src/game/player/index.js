@@ -27,17 +27,17 @@ export default class Player extends createjs.Container {
 
     this.player = new createjs.Sprite(this.spriteSheetPlayer, "play");
 
-    this.maskshape = new createjs.Shape();
-    this.maskshape.graphics.beginFill("#fff").drawCircle(0, 0, PLAYER_WIDTH/2);
+    // this.maskshape = new createjs.Shape();
+    // this.maskshape.graphics.beginFill("#fff").drawCircle(0, 0, PLAYER_WIDTH/2);
     this.player.mask=this.maskshape;
     this.player.y = screenHeight -  30;
     this.player.speedx=0;
     this.player.speedy = 0;
     this.player.x = screenWidth / 2 ;
-    this.maskshape.x=this.player.x;
-    this.maskshape.y=this.player.y;
-    this.maskshape.scaleX = SCALE;
-    this.maskshape.scaleY = SCALE;
+    // this.maskshape.x=this.player.x;
+    // this.maskshape.y=this.player.y;
+    // this.maskshape.scaleX = SCALE;
+    // this.maskshape.scaleY = SCALE;
 
     this.player.scaleX = SCALE;
     this.player.scaleY = SCALE;
@@ -65,8 +65,8 @@ export default class Player extends createjs.Container {
   update(test){
     this.player.x += this.player.speedx;
     this.player.y += this.player.speedy;
-    this.maskshape.x = this.player.x;
-    this.maskshape.y = this.player.y;
+    // this.maskshape.x = this.player.x;
+    // this.maskshape.y = this.player.y;
     this.name_label.x = this.player.x -this.name_label.lineWidth;
     this.name_label.y = this.player.y - 60;
     this.setAirPosAcrossFingerPosZ(this.player.x, this.player.y);
