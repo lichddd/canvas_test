@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=480, user-scalable=no">
-  <!-- <meta name="viewport" content="width=480, user-scalable=no"> -->
-
-
-  <style>
-    html {
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=480,user-scalable=no"><style>html {
 
       transition: background-color 1s;
     }
@@ -16,10 +6,7 @@
     #appC {
       /* width: 480px; */
       transition: opacity 1s;
-    }
-  </style>
-  <style id="loadingCSS">
-    html {
+    }</style><style id=loadingCSS>html {
       background-color: #2eb2ef;
     }
 
@@ -123,41 +110,13 @@
         margin-left: 5px;
         margin-right: 5px;
       }
-    }
-  </style>
-
-
-
-
-  <title>canvas测试</title>
-</head>
-
-<body>
-  <div id="appC">
-    <canvas id="canvas" width="480" height="640" style="width:480px;height:640px;float: left;"></canvas>
-    
-  </div>
-  <div id="loading">
-    <div class="spinner">
-      <div class="rect1"></div>
-      <div class="rect2"></div>
-      <div class="rect3"></div>
-      <div class="rect4"></div>
-      <div class="rect5"></div>
-    </div>
-    <div id="loadingStr">加载中...</div>
-  </div>
-
-  <!--[if lt IE 10]>
+    }</style><title>canvas测试</title></head><body><div id=appC><canvas id=canvas width=480 height=640 style="width:480px;height:640px;float: left;"></canvas></div><div id=loading><div class=spinner><div class=rect1></div><div class=rect2></div><div class=rect3></div><div class=rect4></div><div class=rect5></div></div><div id=loadingStr>加载中...</div></div><!--[if lt IE 10]>
   <p class="chromeframe" onclick="this.style.display='none'">您正在使用<strong>低版本浏览器</strong>，请<a
           href="http://browsehappy.com/">升级到新版本浏览器</a>或者<a href="http://www.mychrome.cn/desktop/">下载谷歌浏览器</a>，以便页面能正确显示并提升您的浏览体验!360浏览器请切换至<span>极速模式 </span><a
           title="关闭">&times;</a></p>
-  <![endif]-->
-</body>
-<script type="text/javascript" charset="utf-8">
-  window.loadingOBJ = {
-    csscount: <%=htmlWebpackPlugin.files.css.length%>,
-    jscount: <%=htmlWebpackPlugin.files.js.length%>,
+  <![endif]--></body><script type=text/javascript charset=utf-8>window.loadingOBJ = {
+    csscount: 1,
+    jscount: 1,
     count: 1,
     nowcount: 0
   };
@@ -168,42 +127,11 @@
     }
 
 
-  }, 200);
-</script>
-<script type="text/javascript" charset="utf-8">
-  window.loadingOBJ.nowcount = window.loadingOBJ.count;
-  window.loadingOBJ.count = 10;
-</script>
-<link rel="stylesheet" href="static/index.css" />
-
-
-<% for (var css in htmlWebpackPlugin.files.css) { %>
-  <script type="text/javascript" charset="utf-8">
-    window.loadingOBJ.nowcount = window.loadingOBJ.count;
-    window.loadingOBJ.count += (100 - 10 - 1) / (window.loadingOBJ.csscount + window.loadingOBJ.jscount);
-  </script>
-  <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
-
-
-
-  <% } %>
-
-
-    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-      <script type="text/javascript" charset="utf-8">
-        window.loadingOBJ.nowcount = window.loadingOBJ.count;
-        window.loadingOBJ.count += (100 - 10 - 1) / (window.loadingOBJ.csscount + window.loadingOBJ.jscount);
-      </script>
-      <script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-
-
-      <% } %>
-        <script type="text/javascript" charset="utf-8">
-          delete window.loadingOBJ;
+  }, 200);</script><script type=text/javascript charset=utf-8>window.loadingOBJ.nowcount = window.loadingOBJ.count;
+  window.loadingOBJ.count = 10;</script><link rel=stylesheet href=static/index.css><script type=text/javascript charset=utf-8>window.loadingOBJ.nowcount = window.loadingOBJ.count;
+    window.loadingOBJ.count += (100 - 10 - 1) / (window.loadingOBJ.csscount + window.loadingOBJ.jscount);</script><link href=/static/css/app.05bd6e41.css rel=stylesheet><script type=text/javascript charset=utf-8>window.loadingOBJ.nowcount = window.loadingOBJ.count;
+        window.loadingOBJ.count += (100 - 10 - 1) / (window.loadingOBJ.csscount + window.loadingOBJ.jscount);</script><script type=text/javascript src=/static/js/app.05bd6e4116748cb4b072.js></script><script type=text/javascript charset=utf-8>delete window.loadingOBJ;
           clearTimeout(window.st);
           delete window.st;
           document.getElementsByTagName("body")[0].removeChild(document.getElementById("loading"));
-          document.getElementsByTagName("head")[0].removeChild(document.getElementById("loadingCSS"));
-        </script>
-
-</html>
+          document.getElementsByTagName("head")[0].removeChild(document.getElementById("loadingCSS"));</script></html>
